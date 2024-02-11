@@ -38,21 +38,15 @@ export default function PassphraseGenerator() {
           >
             4 words
           </button>
-          <button className='group' onClick={copy} type='button'>
+          <button
+            className={`group ${copyStatus ? 'border-green' : ''}`}
+            onClick={copy}
+            type='button'
+          >
             Copy
           </button>
         </div>
       </div>
-
-      <span
-        className={`bg-accent border border-border rounded-md text-sm text-primary px-2 py-1 absolute bottom-10 mx-auto transition-all duration-200 ease-in-out pointer-events-none ${
-          copyStatus
-            ? 'scale-100 opacity-100 translate-y-0'
-            : 'scale-50 opacity-0 translate-y-20'
-        }`}
-      >
-        Copied to clipboard
-      </span>
     </section>
   )
 }

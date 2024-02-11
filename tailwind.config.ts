@@ -13,7 +13,8 @@ const config: Config = {
         secondary: '#7A8699',
         accent: '#0E1424',
         border: '#1F2939',
-        background: '#020510'
+        background: '#020510',
+        green: '#3DDC97'
       }
     }
   },
