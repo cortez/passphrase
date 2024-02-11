@@ -43,17 +43,17 @@ export default function PassphraseGenerator() {
           <button className='group' onClick={copy} type='button'>
             <span
               className={`transition-transform duration-200 ease-in-out ${
-                copyStatus ? '-translate-x-3' : 'translate-x-0'
+                copyStatus ? 'scale-90 opacity-0' : 'scale-100 opacity-100'
               }`}
             >
               Copy
             </span>
             <svg
-              className={`absolute right-4 sm:right-8 transition-all text-secondary pointer-events-none ${
+              className={`absolute m-auto transition-all text-secondary pointer-events-none ${
                 copyStatus ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
               }`}
-              width='13'
-              height='13'
+              width='16'
+              height='16'
               viewBox='0 -4 24 24'
               id='meteor-icon-kit__solid-checkmark'
               fill='none'
