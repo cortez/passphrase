@@ -39,7 +39,9 @@ export default function PassphraseGenerator() {
             4 words
           </button>
           <button
-            className={`group ${copyStatus ? 'border-green' : ''}`}
+            className={`group ${
+              copyStatus ? 'text-green hover:text-green border-green' : ''
+            }`}
             onClick={copy}
             type='button'
           >
