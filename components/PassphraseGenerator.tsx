@@ -50,7 +50,7 @@ export default function PassphraseGenerator() {
             type='button'
           >
             <span
-              className={`transition-transform ${
+              className={`transition-transform duration-100 ease-in-out ${
                 copyStatus ? '-translate-x-3' : 'translate-x-0'
               }`}
             >
