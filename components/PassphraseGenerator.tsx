@@ -40,15 +40,7 @@ export default function PassphraseGenerator() {
             4 words
           </button>
 
-          <button
-            className={`group ${
-              copyStatus
-                ? 'translate-x-[3px] translate-y-[3px] shadow-none'
-                : 'translate-x-0 translate-y-0'
-            }`}
-            onClick={copy}
-            type='button'
-          >
+          <button className='group' onClick={copy} type='button'>
             <span
               className={`transition-transform duration-100 ease-in-out ${
                 copyStatus ? '-translate-x-3' : 'translate-x-0'
