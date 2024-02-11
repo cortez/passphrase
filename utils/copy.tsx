@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-const useClickToCopy = (text: string, notifyTimeout = 500) => {
+const useClickToCopy = (text: string, notifyTimeout = 1500) => {
   const [copyStatus, setCopyStatus] = useState<any>(null)
 
   const copyToClipboardFallback = (textAreaVal: string) => {
