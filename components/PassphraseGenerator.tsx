@@ -9,25 +9,39 @@ export default function PassphraseGenerator() {
   const [passphrase, setPassphrase] = useState(generatePassphrase())
   const [copyStatus, copy] = useClickToCopy(passphrase)
 
-  function generatePassphrase() {
-    return generate({ exactly: 4, join: '-' })
+  function generatePassphrase(count = 3) {
+    return generate({ exactly: count, join: '-' })
   }
 
   return (
     <section className='flex flex-col items-center justify-center h-[100svh] bg-background p-5 text-sm sm:text-base'>
-      <div className='flex flex-col gap-2.5 w-full sm:w-[500px] p-5 sm:p-10 rounded-lg border border-border'>
+      <div className='flex flex-col gap-2.5 w-full sm:w-[500px] p-5 sm:p-10 rounded-lg border-[1.5px] border-border'>
         <input
           type='text'
-          className='font-mono px-3 h-11 w-full text-center rounded border border-border bg-background bg-gradient-to-tr from-accent to-secondary bg-clip-text text-transparent focus:outline-none'
+          className='font-mono px-3 h-11 w-full text-center rounded border-[1.5px] border-border bg-background text-primary focus:outline-none'
           value={passphrase}
           readOnly
         />
 
-        <div className='grid grid-cols-2 gap-2.5 w-full'>
+        <div className='grid grid-cols-3 gap-2.5 w-full'>
+          <button
+            className='group'
+            onClick={() => setPassphrase(generatePassphrase(3))}
+            type='button'
+          >
+            3 words
+          </button>
+          <button
+            className='group'
+            onClick={() => setPassphrase(generatePassphrase(4))}
+            type='button'
+          >
+            4 words
+          </button>
           <button className='group' onClick={copy} type='button'>
             Copy
             <svg
-              className={`absolute right-3.5 transition-all text-secondary pointer-events-none ${
+              className={`absolute right-3 transition-all text-secondary pointer-events-none ${
                 copyStatus ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
               }`}
               width='14'
@@ -44,13 +58,6 @@ export default function PassphraseGenerator() {
                 fill='currentColor'
               />
             </svg>
-          </button>
-          <button
-            className='group'
-            onClick={() => setPassphrase(generatePassphrase())}
-            type='button'
-          >
-            Generate
           </button>
         </div>
       </div>
